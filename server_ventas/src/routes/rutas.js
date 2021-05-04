@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Libro = require('../models/libro.js');
 const Venta = require('../models/venta.js');
-
+const Vendedor= require('../models/vendedor');
 
 
 router.get('/', async (req,res)=>{
@@ -11,8 +11,11 @@ router.get('/', async (req,res)=>{
     // necestio en modulo path para poder concatenar de forma correcta los directorios
     //console.log(path.join(__dirname, 'views/index.ejs'));// ya sabe en que sistema operativo estoy y lo convierte por ejemplo / en \
     const libros =  await Libro.find();
+    const vendedores = await Vendedor.find();
     res.render('index', {
-        libros //libros: libros acepta las 2 formas 
+        libros //libros: libros acepta las 2 formas
+        ,
+        vendedores
     });//respondo con la pagina web, puedo pasarle un parametro para tener objetos 
 });
 

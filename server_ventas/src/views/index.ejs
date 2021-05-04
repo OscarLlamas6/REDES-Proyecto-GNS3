@@ -100,12 +100,21 @@
                                     <CENTER>
                                         <h3 style="color: black;">Registrar Venta</h3>
                                     </CENTER>
-                                    <div class="form-group" style=" margin-top: 20px;">
-                                        <input type="number" name="id_vendedor" placeholder="INGRESA EL ID DEL VENDEDOR"
-                                            class="form-control">
-                                    </div>
+             
 
-                                    <select name="nombre" style="min-width: 100%; padding: 5%; margin-top: 20px; margin-bottom: 50px;">
+
+                                    <select name="id_vendedor" style="min-width: 100%; padding: 1%; margin-top: 30px; margin-bottom: 20px;">
+                                      
+                                        <label> id del vendedor</label>
+                                        <br>
+           
+                                       <% for (var i=0; i < vendedores.length;i++){ %>
+                                               <option value="<%=vendedores[i].id%>"><%=vendedores[i].id%></option>
+                                           <% }%>
+   
+                                       </select>
+
+                                    <select name="nombre" style="min-width: 100%; padding: 1%; margin-top: 20px; margin-bottom: 30px;">
                                       
                                      <label> nombre del producto</label>
                                      <br>
