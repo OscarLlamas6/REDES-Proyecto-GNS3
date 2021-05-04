@@ -1,0 +1,124 @@
+<%- include('partes/header') %>
+
+    <div>
+        <center>
+            <h1> PROYECTO  REDES 1</h2>
+        </center>
+    </div>
+
+
+
+    <div class="container col-6 col-xl-6 m-lg-4 m-md-4">
+        <h2>DEPARTAMENTO: RECURSOS HUMANOS</h2>
+        <br>
+        <h2>GRUPO 22</h2>
+        <li>201602625 OSCAR ALFREDO LLAMAS LEMUS </li>
+        <li>201800464 PABLO ANDRES ARGUETA HERNANDEZ </li>
+        <li>201801370 JAVIER ANTONIO CHIN FLORES </li>
+        <li>201800634 ANTHONY FERNANDO SON MUX </li>
+    </div>
+
+
+
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <div class="row">
+
+
+        <div class="container">
+            <div class="row p-4">
+                <div class="col-md-5"  style="height: 318px;">
+                    <div class="card">
+                        <form action="/add" method="POST" style="width: 100%;" class="p-5">
+                            <CENTER style="margin-bottom: 10%;">
+                                <h3 style="color: black;">Creacion de Vendedor</h3>
+                            </CENTER>
+                            <div class="form-group">
+                                <input type="number" name="dpi" placeholder="INGRESA EL DPI"
+                                    class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="nombre" placeholder="INGRESE EL NOMBRE "
+                                    class="form-control">
+                            </div>
+
+
+                            <div class="form-group">
+                                <input type="text" name="apellido" placeholder="INGRESE EL APELLIDO "
+                                    class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="direccion" placeholder="INGRESA LA DIRECCION"
+                                    class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="telefono" placeholder="TELEFONO"
+                                    class="form-control">
+                            </div>
+
+                            
+                            <button type="submit" class="btn btn-primary btn-block">CREAR</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-7 " style="height: auto; max-height:345px ; overflow: scroll  !important;">
+                    <table class="table table-bordered table-hover " style="background-color: white;">
+                        <thead>
+                            <tr>
+                                <th>N°</th>
+                                <th>ID</th>
+                                <th>DPI</th>
+                                <th>NOMBRE</th>
+                                <th>APELLIDO</th>
+                                <th>DIRECCION</th>
+                                <th>TELEFONO</th>
+                            </tr>
+                        </thead>
+                        <tbody style="justify-content: center; text-align: center;">
+                            <% for (var i=0; i < Vendedores.length;i++){ %>
+                                <tr>
+                                    <td>
+                                        <%= i+1 %>
+                                    </td>
+                                    <td>
+                                        <%=Vendedores[i].id%>
+                                    </td>
+                                    <td>
+                                        <%=Vendedores[i].dpi%>
+                                    </td>
+                                    <td>
+                                        <%=Vendedores[i].nombre%>
+                                    </td>
+                                    <td>
+                                        <%=Vendedores[i].apellido%>
+                                    </td>
+                                    <td>
+                                        <%=Vendedores[i].direccion%>
+                                    </td>
+                                    <td>
+                                        <%=Vendedores[i].telefono%>
+                                    </td>
+                                </tr>
+                                <% }%>
+                        </tbody>
+                    </table>
+                </div>
+
+
+       
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <%- include('partes/footer') %>

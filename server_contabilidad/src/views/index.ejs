@@ -1,0 +1,69 @@
+<%- include('partes/header') %>
+
+    <div>
+        <center>
+            <h1> PROYECTO  REDES 1</h2>
+        </center>
+    </div>
+
+
+
+    <div class="container col-6 col-xl-6 m-lg-4 m-md-4">
+        <h2>DEPARTAMENTO: Contabilidad</h2>
+        <br>
+        <h2>GRUPO 22</h2>
+        <li>201602625 OSCAR ALFREDO LLAMAS LEMUS </li>
+        <li>201800464 PABLO ANDRES ARGUETA HERNANDEZ </li>
+        <li>201801370 JAVIER ANTONIO CHIN FLORES </li>
+        <li>201800634 ANTHONY FERNANDO SON MUX </li>
+    </div>
+
+
+
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <div class="row">
+
+
+                <div class="col-md-8" style="height: auto; max-height:318px ; overflow: scroll  !important; margin-left: 20%;">
+                    <table class="table table-bordered table-hover " style="background-color: white;">
+                        <thead>
+                            <tr>
+                                <th>N°</th>
+                                <th>Id vendedor</th>
+                                <th>nombre libro o producto</th>
+                                <th>fecha</th>
+                            </tr>
+                        </thead>
+                        <tbody style="justify-content: center; text-align: center;">
+                            <% for (var i=0; i < Ventas.length;i++){ %>
+                                <tr>
+                                    <td>
+                                        <%= i+1 %>
+                                    </td>
+                                    <td>
+                                        <%=Ventas[i].id_vendedor %>
+                                    </td>
+                                    <td>
+                                        <%=Ventas[i].nombre%>
+                                    </td>
+                                    <td>
+                                        <%= String(Ventas[i].createdAt).substr(0,25) %>
+                                    </td>
+                                </tr>
+                                <% }%>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <%- include('partes/footer') %>
