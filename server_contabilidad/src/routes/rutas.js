@@ -10,9 +10,9 @@ router.get('/', async (req,res)=>{
     //console.log(__dirname );
     // necestio en modulo path para poder concatenar de forma correcta los directorios
     //console.log(path.join(__dirname, 'views/index.ejs'));// ya sabe en que sistema operativo estoy y lo convierte por ejemplo / en \
-    const Ventas =  await Venta.find();
+    const Ventas =[]; //=  await Venta.find();
     res.render('index', {
-        Ventas //Ventas: Ventas acepta las 2 formas 
+        Ventas //Ventas: Ventas acepta las 2 formas
     });//respondo con la pagina web, puedo pasarle un parametro para tener objetos 
 });
 

@@ -4,14 +4,13 @@ const path = require('path');
 const morgan = require('morgan');
 const indexRoutes = require('./routes/rutas');
 const { dbConnection } = require('./db/config');
-require('dotenv').config();
 const app = express();
 
 // DB Connection
-dbConnection();
+//dbConnection();
 
 // settings
-app.set('port', process.env.PORT || 3000);
+app.set('port',4200);
 app.set('views',path.join(__dirname,'views')); // para que encuentre la carpeta views
 app.set('view engine','ejs');
 
@@ -29,7 +28,12 @@ app.use('/',indexRoutes);
 //archivos estaticos
 app.use(express.static(path.join(__dirname,"public")));
 
-// listening
+// Manejador de rutas
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'public/index.html'));
+});
+
+
 app.listen(app.get('port'), () => {
     console.log(`Server running on port ${app.get('port')}`);
 });
