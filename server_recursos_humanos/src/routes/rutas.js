@@ -6,11 +6,8 @@ const Vendedor = require('../models/vendedor')
 
 
 router.get('/', async (req,res)=>{
-    // dirname da el valor del directorio donde se ejecuta
-    //console.log(__dirname );
-    // necestio en modulo path para poder concatenar de forma correcta los directorios
-    //console.log(path.join(__dirname, 'views/index.ejs'));// ya sabe en que sistema operativo estoy y lo convierte por ejemplo / en \
-    const Vendedores =  await Vendedor.find();
+
+    const Vendedores = []; // await Vendedor.find();
     res.render('index', {
         Vendedores //libros: libros acepta las 2 formas 
     });//respondo con la pagina web, puedo pasarle un parametro para tener objetos 
